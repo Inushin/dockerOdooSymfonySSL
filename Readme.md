@@ -68,6 +68,8 @@ Creating docker_nginx_1   ... done
 Creating docker-certbot-1 ... done
 ```
 
+🚨 If you have the folling error `Connection matched pg_hba.conf line 99: "host all all all md5"`, go to `/var/lib/docker/volumes/dockerOdooSymfonySSL/_data/pg_hba.conf` and edit last line to `"host all all all trust"`
+
 16. Remember to edit the `env` file at the root of the Symfony's project. `db` is the name of the container that has your database:
 ```
 DATABASE_URL=postgresql://postgresql_db_user_name:postgresql_db_user_pass@db:5432/db_odoo_name?serverVersion=13&charset=utf8
