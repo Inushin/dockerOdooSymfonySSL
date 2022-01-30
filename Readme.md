@@ -139,3 +139,4 @@ If you find any bug or just want to give your feedback (remember the ⭐ ^^), **
 ## Version control 📝
 
 0.0.0 - Creation of the rep with the config finished - 27/01/2022
+0.0.1 - Added pdo pdo_pgsql pgsql to de PHP Dockerfile - 28/01/2022
