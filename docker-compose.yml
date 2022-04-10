@@ -45,8 +45,6 @@ services:
      image: odoo:13.0
      depends_on:
        - db
-     ports:
-       - "8069:8069/tcp"
      volumes:
        - web-data:/var/lib/odoo
        - ./data/odoo/config:/etc/odoo
