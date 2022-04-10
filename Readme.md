@@ -147,3 +147,4 @@ If you find any bug or just want to give your feedback (remember the ⭐ ^^), **
 - 0.0.0 - Creation of the rep with the config finished - 27/01/2022
 - 0.0.1 - Added pdo pdo_pgsql pgsql to the PHP Dockerfile - 28/01/2022
 - 0.0.2 - Updated useful Docker commands - 10/02/2022
+- 0.1.0 - Added the OdooDB initialitation command to the docker-compose.yml - 10/02/2022
