@@ -34,8 +34,6 @@ services:
      image: postgres:13
      volumes:
        - db-data:/var/lib/postgresql/data/pgdata
-#       - db-data:/var/www/certbot/:rw
-#       - db-data:/var/www/certbot/phpDir/symfony/escapalmiSymfony/public/:rw
      ports:
        - 5432:5432/tcp
      environment:
@@ -51,10 +49,12 @@ services:
        - "8069:8069/tcp"
      volumes:
        - web-data:/var/lib/odoo
-#       - web-data:/var/www/certbot/phpDir/Odoo:rw
        - ./data/odoo/config:/etc/odoo
        - ./data/odoo/addons:/mnt/extra-addons
-#       - web-data:/var/www/certbot/phpDir/symfony/escapalmiSymfony/public/:rw
+     #This command initialize the DB so Odoo can work.
+     #Edit with your DB info.
+     #After initializing the first time, comment it.  
+     command: "odoo -i base -d pg_db_name --stop-after-init --db_host=db -r pg_user -w pg_pass"
   ##############################
 # Certbot Container
 ##############################
