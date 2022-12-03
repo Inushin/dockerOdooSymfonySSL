@@ -1,5 +1,8 @@
 version: "3"
 services:
+##############################
+# PHP Container
+##############################
   php:
      build:
        context: .
@@ -14,6 +17,9 @@ services:
        - 9000
      networks:
        - default
+##############################
+# NGINX Container
+##############################
   nginx:
      image: nginx:1.15-alpine
      expose:
@@ -30,6 +36,9 @@ services:
        - ./data/certbotSymfony/conf:/etc/letsencrypt/symfony/:rw
        - ./data/certbotSymfony/www:/var/www/certbot/:rw
      command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+##############################
+# PostgreSQL Container
+##############################
   db:
      image: postgres:13
      volumes:
@@ -53,7 +62,7 @@ services:
      #Edit with your DB info.
      #After initializing the first time, comment it.  
      command: "odoo -i base -d pg_db_name --stop-after-init --db_host=db -r pg_user -w pg_pass"
-  ##############################
+##############################
 # Certbot Container
 ##############################
   certbot:
