@@ -22,13 +22,13 @@ It is composed by 5 containers:
 
 ## 🚨 Warning 🚨
 
-We are using Symfony for the webservice, and Symfony works better with IDs (if we talk about using Doctrine ORM, more), so we will need to adjust the tables of our database in order to add an ID automatically. This is an installation, so that info it is not given here. 
+We are using Symfony for the webservice, and Symfony works better with IDs (if we talk about using Doctrine ORM, more), so we will need to adjust the tables of our database in order to add an ID automatically. This is an installation, so that info it is not given here.
 
 ## Installation ⌨
 
 ![Docker Installation Illustration](https://user-images.githubusercontent.com/57062736/139102730-d6f51d53-ffb3-44bb-be5e-2bdf48d91295.png)
 
-0. You need ****Docker**** and ****Docker-compose**** where you are going to launch this so, if you do not have it... click [HERE](https://github.com/Inushin/dockerOdooSymfonySSL#installing-docker-docker-compose-and-composer) or go to the end of this `.md` ^^
+0. You need **Docker** and **Docker-compose** where you are going to launch this so, if you do not have it... click [HERE](https://github.com/Inushin/dockerOdooSymfonySSL#installing-docker-docker-compose-and-composer) or go to the end of this `.md` ^^
 
 1. Clone this rep.
 
@@ -36,7 +36,7 @@ We are using Symfony for the webservice, and Symfony works better with IDs (if w
 
 3. Edit `initOdooSSL` with your ODOO domain and an email.
 
-4. Edit the `docker-compose.yml` with your DB information. 
+4. Edit the `docker-compose.yml` with your DB information.
 
 5. Edit `data/nginx/web.conf` with your ODOO domain.
 
@@ -58,9 +58,9 @@ We are using Symfony for the webservice, and Symfony works better with IDs (if w
 
 14. Run `docker-compose up -d`
 
-15. The 5 containers are deployed: 
+15. The 5 containers are deployed:
 
-```
+```yaml
 Creating docker_db_1      ... done
 Creating docker_web_1      ... done
 Creating docker_php_1     ... done
@@ -71,14 +71,13 @@ Creating docker-certbot-1 ... done
 🚨 If you have the folling error `Connection matched pg_hba.conf line 99: "host all all all md5"`, go to `/var/lib/docker/volumes/dockerOdooSymfonySSL/_data/pg_hba.conf` and edit last line to `"host all all all trust"`
 
 16. Remember to edit the `env` file at the root of the Symfony's project. `db` is the name of the container that has your database:
-```
+
+```yaml
 DATABASE_URL=postgresql://postgresql_db_user_name:postgresql_db_user_pass@db:5432/db_odoo_name?serverVersion=13&charset=utf8
 ```
 
-
 ## Docker's useful commands 📑
 ![Docker Commands Illustration](https://user-images.githubusercontent.com/57062736/139102966-25f28be1-f768-49bd-a8a1-915a8465de9e.png)
-
 
 - Run Docker-compose: `docker-compose up -d` / `docker-compose up`
 
@@ -106,7 +105,7 @@ DATABASE_URL=postgresql://postgresql_db_user_name:postgresql_db_user_pass@db:543
 ![Docker-composer](https://user-images.githubusercontent.com/57062736/141182130-b8ed2d7a-9a68-4387-b838-ba0d44bb4e0e.png)
 
 **Adjust the installation to your OS. Here you have the one for EC2(AWS) with CentOS**
-#
+
 - Docker installation
 
 1. Download and install Docker: `yum install docker`
@@ -116,7 +115,7 @@ DATABASE_URL=postgresql://postgresql_db_user_name:postgresql_db_user_pass@db:543
 3. Starts Docker's service: `service docker start`
 
 4. Starts Docker's service each time you run the SO: `chkconfig docker on`
-#
+
 - Docker-compose installation
 
 1. Download and install Docker-compose: `curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
@@ -127,9 +126,7 @@ DATABASE_URL=postgresql://postgresql_db_user_name:postgresql_db_user_pass@db:543
 
 4. Check the version and the installation: `docker-compose --version`
 
-#
 - Composer installation
-
 
 1. Download and install Composer: `curl -sS https://getcomposer.org/installer | php`
 
@@ -139,8 +136,7 @@ DATABASE_URL=postgresql://postgresql_db_user_name:postgresql_db_user_pass@db:543
 
 ## ⭐ Feedback and bugs 🐞
 
-If you find any bug or just want to give your feedback (remember the ⭐ ^^), **Feel free to do it**. I am, as you, constantly learning and things change so quickly that... no one knows ^^
-
+If you find any bug or just want to give your feedback (remember the ⭐ ^^), **Feel free to do it**. I am, like you, constantly learning and things change so quickly that... no one knows ^^
 
 ## Version control 📝
 
@@ -148,3 +144,4 @@ If you find any bug or just want to give your feedback (remember the ⭐ ^^), **
 - 0.0.1 - Added pdo pdo_pgsql pgsql to the PHP Dockerfile - 28/01/2022
 - 0.0.2 - Updated useful Docker commands - 10/02/2022
 - 0.1.0 - Added the OdooDB initialitation command to the docker-compose.yml - 10/04/2022
+- 0.1.1 - Remove unneeded files and folders - 03/12/2022
