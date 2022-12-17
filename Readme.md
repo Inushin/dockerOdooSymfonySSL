@@ -140,8 +140,8 @@ If you find any bug or just want to give your feedback (remember the ⭐ ^^), **
 
 ## Version control 📝
 
-- 0.0.0 - Creation of the rep with the config finished - 27/01/2022
-- 0.0.1 - Added pdo pdo_pgsql pgsql to the PHP Dockerfile - 28/01/2022
-- 0.0.2 - Updated useful Docker commands - 10/02/2022
-- 0.1.0 - Added the OdooDB initialitation command to the docker-compose.yml - 10/04/2022
-- 0.1.1 - Remove unneeded files and folders - 03/12/2022
+- 1.0 - Creation of the rep with the config finished - 27/01/2022
+- 1.1 - Added pdo pdo_pgsql pgsql to the PHP Dockerfile - 28/01/2022
+- 1.2 - Updated useful Docker commands - 10/02/2022
+- 2.1 - Added the OdooDB initialitation command to the docker-compose.yml - 10/04/2022
+- [v2.2 - Current](https://github.com/Inushin/dockerOdooSymfonySSL/tree/v2.2)  - Remove unneeded files and folders - 03/12/2022
